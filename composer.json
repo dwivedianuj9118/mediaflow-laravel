@@ -1,0 +1,74 @@
+{
+    "name": "dwivedianuj9118/mediaflow-laravel",
+    "description": "Universal media management infrastructure and UI for Laravel applications",
+    "license": "MIT",
+    "homepage": "https://github.com/dwivedianuj9118/mediaflow-laravel",
+    "support": {
+        "issues": "https://github.com/dwivedianuj9118/mediaflow-laravel/issues",
+        "source": "https://github.com/dwivedianuj9118/mediaflow-laravel"
+    },
+    "keywords": [
+        "laravel",
+        "media",
+        "upload",
+        "storage",
+        "cdn",
+        "file-manager"
+    ],
+    "authors": [
+        {
+            "name": "Anuj Dwivedi",
+            "email": "dwivedianuj9118@gmail.com",
+            "homepage": "https://anujdwivedi.online",
+            "role": "Creator & Lead Architect"
+        }
+    ],
+    "require": {
+        "php": "^8.2|^8.3|^8.4|^8.5",
+        "illuminate/support": "^11.0|^12.0|^13.0",
+        "illuminate/database": "^11.0|^12.0|^13.0",
+        "illuminate/filesystem": "^11.0|^12.0|^13.0",
+        "illuminate/http": "^11.0|^12.0|^13.0",
+        "illuminate/validation": "^11.0|^12.0|^13.0",
+        "illuminate/view": "^11.0|^12.0|^13.0",
+        "illuminate/queue": "^11.0|^12.0|^13.0",
+        "illuminate/events": "^11.0|^12.0|^13.0",
+        "illuminate/console": "^11.0|^12.0|^13.0",
+        "league/flysystem-aws-s3-v3": "^3.0",
+        "ext-fileinfo": "*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0|^10.0|^11.0",
+        "phpunit/phpunit": "^10.5|^11.0|^12.0"
+    },
+    "suggest": {
+        "league/flysystem-aws-s3-v3": "Required for Amazon S3 and all S3-compatible cloud presets (R2, Spaces, Wasabi, B2, MinIO, ...): composer require league/flysystem-aws-s3-v3 \"^3.0\"",
+        "ext-gd": "Required for thumbnails, EXIF stripping and image optimization (with WebP support)",
+        "ext-exif": "Keeps JPEG orientation when EXIF metadata is stripped"
+    },
+    "autoload": {
+        "psr-4": {
+            "MediaFlow\\Laravel\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MediaFlow\\Laravel\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MediaFlow\\Laravel\\MediaFlowServiceProvider"
+            ],
+            "aliases": {
+                "MediaFlow": "MediaFlow\\Laravel\\Facades\\MediaFlow"
+            }
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

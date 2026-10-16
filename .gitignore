@@ -1,0 +1,13 @@
+/vendor/
+/demo/
+.phpunit.cache/
+.phpunit.result.cache
+.DS_Store
+.idea/
+.env
+
+# Ignore internal notes and drafts in docs, publish only static HTML site
+/docs/*.md
+/docs/*.docx
+/docs/*.txt
+/docs/MEDIAFLOW_AI_IDE_*

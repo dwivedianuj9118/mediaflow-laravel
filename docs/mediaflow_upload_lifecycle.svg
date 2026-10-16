@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="930" viewBox="0 0 1600 930">
+<rect width="1600" height="930" fill="#FFFFFF"/>
+<text x="800.0" y="52" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#102A43">MEDIAFLOW | UPLOAD LIFECYCLE</text>
+<text x="800.0" y="80" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#64748B">A real event-driven pipeline with clear failure behavior and optional motion</text>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#64748B"/></marker></defs>
+<rect x="40" y="125" width="450" height="110" rx="15" fill="#EAF2FF" stroke="#93B4F4" stroke-width="2"/>
+<text x="265.0" y="162" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#102A43">1  Select or drop file</text>
+<text x="265.0" y="198" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#334155">Browser reads file metadata and begins upload</text>
+<rect x="575" y="125" width="450" height="110" rx="15" fill="#EAF2FF" stroke="#93B4F4" stroke-width="2"/>
+<text x="800.0" y="162" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#102A43">2  Temporary upload</text>
+<text x="800.0" y="198" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#334155">Apply request limits and assign temp ID</text>
+<rect x="1110" y="125" width="450" height="110" rx="15" fill="#FFF7E6" stroke="#E6B84E" stroke-width="2"/>
+<text x="1335.0" y="162" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#102A43">3  Validate and quarantine</text>
+<text x="1335.0" y="198" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#334155">Check authorization, content, MIME and size</text>
+<rect x="1110" y="355" width="450" height="110" rx="15" fill="#E6F7F2" stroke="#5AAE98" stroke-width="2"/>
+<text x="1335.0" y="392" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#102A43">4  Create media record</text>
+<text x="1335.0" y="428" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#334155">Record owner, folder, disk and status</text>
+<rect x="575" y="355" width="450" height="110" rx="15" fill="#FFF7E6" stroke="#E6B84E" stroke-width="2"/>
+<text x="800.0" y="392" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#102A43">5  Process when enabled</text>
+<text x="800.0" y="428" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#334155">Safe key, checksum, variants and optimization</text>
+<rect x="40" y="355" width="450" height="110" rx="15" fill="#E6F7F2" stroke="#5AAE98" stroke-width="2"/>
+<text x="265.0" y="392" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#102A43">6  Store original / variants</text>
+<text x="265.0" y="428" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#334155">Write using the selected storage adapter</text>
+<rect x="40" y="585" width="450" height="110" rx="15" fill="#F0EDFF" stroke="#B7B2E8" stroke-width="2"/>
+<text x="265.0" y="622" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#102A43">7  Resolve delivery URL</text>
+<text x="265.0" y="658" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#334155">Disk URL, custom domain or signed URL</text>
+<rect x="575" y="585" width="450" height="110" rx="15" fill="#DCFCE7" stroke="#4DAD77" stroke-width="2"/>
+<text x="800.0" y="622" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#102A43">8  Mark ready and respond</text>
+<text x="800.0" y="658" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#334155">Return media ID, status, URL and variants</text>
+<rect x="1110" y="585" width="450" height="110" rx="15" fill="#EAF2FF" stroke="#93B4F4" stroke-width="2"/>
+<text x="1335.0" y="622" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#102A43">9  Update the UI</text>
+<text x="1335.0" y="658" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#334155">Show verified success, retry or safe error</text>
+<line x1="490" y1="180" x2="575" y2="180" stroke="#64748B" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="1025" y1="180" x2="1110" y2="180" stroke="#64748B" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="1335" y1="235" x2="1335" y2="355" stroke="#64748B" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="1110" y1="410" x2="1025" y2="410" stroke="#64748B" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="575" y1="410" x2="490" y2="410" stroke="#64748B" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="265" y1="465" x2="265" y2="585" stroke="#64748B" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="490" y1="640" x2="575" y2="640" stroke="#64748B" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="1025" y1="640" x2="1110" y2="640" stroke="#64748B" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="40" y="755" width="1520" height="125" rx="15" fill="#F8FAFC" stroke="#D8E3EF" stroke-width="1.5"/>
+<text x="68" y="786" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#64748B">FAILURE HANDLING &amp; UI RULES</text>
+<text x="68" y="815" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#334155">
+<tspan x="68" dy="0">Invalid input → reject safely and clean temporary data. Storage/delivery failure → keep media non-ready, retry idempotently, verify partial writes, and reconcile orphans.</tspan>
+<tspan x="68" dy="27">The browser reports transfer progress; backend events report validation, processing, storage and ready state. Animation can be disabled globally or per component.</tspan>
+</text>
+</svg>
