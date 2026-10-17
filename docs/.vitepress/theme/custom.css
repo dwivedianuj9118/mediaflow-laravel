@@ -1,0 +1,248 @@
+/*
+ * MediaFlow docs theme: neutral greys with one solid blue accent.
+ * No gradients, no glow; contrast checked for body text in both modes.
+ */
+
+:root {
+  --vp-font-family-base: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --vp-font-family-mono: ui-monospace, 'SFMono-Regular', 'JetBrains Mono', Menlo, Consolas, monospace;
+
+  /* Neutrals */
+  --vp-c-bg: #ffffff;
+  --vp-c-bg-alt: #f6f7f9;
+  --vp-c-bg-elv: #ffffff;
+  --vp-c-bg-soft: #f1f3f5;
+  --vp-c-divider: #e3e6ea;
+  --vp-c-border: #d5d9df;
+  --vp-c-gutter: #e3e6ea;
+  --vp-c-text-1: #1a1d21;
+  --vp-c-text-2: #4b5260;
+  --vp-c-text-3: #6b7280;
+
+  /* Accent: a single solid blue */
+  --vp-c-brand-1: #1d4ed8;
+  --vp-c-brand-2: #1e40af;
+  --vp-c-brand-3: #1d4ed8;
+  --vp-c-brand-soft: rgba(29, 78, 216, 0.08);
+
+  --vp-c-default-soft: #eef0f3;
+
+  /* Callouts: muted, solid tints */
+  --vp-c-tip-1: #1d4ed8;
+  --vp-c-tip-soft: #eff4ff;
+  --vp-c-note-1: #374151;
+  --vp-c-note-soft: #f3f4f6;
+  --vp-c-warning-1: #92400e;
+  --vp-c-warning-soft: #fdf6e7;
+  --vp-c-danger-1: #b42318;
+  --vp-c-danger-soft: #fdf0ef;
+
+  --vp-code-bg: #f1f3f5;
+  --vp-code-color: #1a1d21;
+  --vp-code-block-bg: #f6f7f9;
+  --vp-code-copy-code-bg: #ffffff;
+
+  /* Home hero: plain text, no gradient name, no glow */
+  --vp-home-hero-name-color: var(--vp-c-text-1);
+  --vp-home-hero-name-background: none;
+  --vp-home-hero-image-background-image: none;
+  --vp-home-hero-image-filter: none;
+
+  --vp-button-brand-bg: var(--vp-c-brand-1);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-2);
+  --vp-button-brand-active-bg: var(--vp-c-brand-2);
+  --vp-button-brand-border: transparent;
+
+  --vp-layout-max-width: 1440px;
+}
+
+.dark {
+  --vp-c-bg: #16181d;
+  --vp-c-bg-alt: #1c1f25;
+  --vp-c-bg-elv: #20232a;
+  --vp-c-bg-soft: #22262d;
+  --vp-c-divider: #2b3038;
+  --vp-c-border: #3a404a;
+  --vp-c-gutter: #0f1114;
+  --vp-c-text-1: #e8eaed;
+  --vp-c-text-2: #b3b9c3;
+  --vp-c-text-3: #8a919c;
+
+  --vp-c-brand-1: #7ea6f6;
+  --vp-c-brand-2: #a3c0fa;
+  --vp-c-brand-3: #3b6fd8;
+  --vp-c-brand-soft: rgba(126, 166, 246, 0.12);
+
+  --vp-c-default-soft: #262a31;
+
+  --vp-c-tip-1: #8fb2f8;
+  --vp-c-tip-soft: #1b2436;
+  --vp-c-note-1: #c4c9d1;
+  --vp-c-note-soft: #22262d;
+  --vp-c-warning-1: #e8b766;
+  --vp-c-warning-soft: #2b2419;
+  --vp-c-danger-1: #f08a80;
+  --vp-c-danger-soft: #2e1d1c;
+
+  --vp-code-bg: #262a31;
+  --vp-code-color: #e8eaed;
+  --vp-code-block-bg: #1c1f25;
+  --vp-code-copy-code-bg: #262a31;
+
+  --vp-button-brand-text: #0f1114;
+}
+
+/* ---------- Reading comfort ---------- */
+
+.vp-doc {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.vp-doc p,
+.vp-doc li {
+  color: var(--vp-c-text-1);
+}
+
+.vp-doc h1 {
+  font-size: 2rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.vp-doc h2 {
+  font-size: 1.45rem;
+  letter-spacing: -0.01em;
+  margin-top: 56px;
+  padding-top: 28px;
+}
+
+.vp-doc h3 {
+  font-size: 1.15rem;
+  margin-top: 36px;
+}
+
+.vp-doc a {
+  text-underline-offset: 3px;
+}
+
+.vp-doc :not(pre) > code {
+  font-size: 0.875em;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--vp-c-divider);
+}
+
+.vp-doc div[class*='language-'] {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+}
+
+/* Tables: full width, zebra-free, clear header */
+.vp-doc table {
+  display: table;
+  width: 100%;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  border-collapse: collapse;
+}
+
+.vp-doc tr {
+  background: transparent !important;
+}
+
+.vp-doc th {
+  background: var(--vp-c-bg-alt);
+  font-weight: 600;
+  text-align: left;
+}
+
+.vp-doc th,
+.vp-doc td {
+  border: 1px solid var(--vp-c-divider);
+  padding: 9px 12px;
+  vertical-align: top;
+}
+
+.vp-doc td:first-child code {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .vp-doc table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+/* Callouts: thin left rule instead of filled boxes */
+.vp-doc .custom-block {
+  border: 1px solid var(--vp-c-divider);
+  border-left-width: 3px;
+  border-radius: 6px;
+}
+.vp-doc .custom-block.tip { border-left-color: var(--vp-c-tip-1); }
+.vp-doc .custom-block.info { border-left-color: var(--vp-c-text-3); }
+.vp-doc .custom-block.warning { border-left-color: var(--vp-c-warning-1); }
+.vp-doc .custom-block.danger { border-left-color: var(--vp-c-danger-1); }
+
+/* Diagrams sit on a neutral card so they read in both themes */
+.vp-doc .diagram {
+  margin: 24px 0;
+  padding: 16px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background: #ffffff;
+}
+.vp-doc .diagram img {
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- Chrome ---------- */
+
+.VPNavBar .title {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.VPSidebarItem.level-0 > .item > .text {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--vp-c-text-3);
+}
+
+.VPHome .VPHero .name {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+/* Product name first, then a quieter one-line pitch */
+.VPHome .VPHero .text {
+  color: var(--vp-c-text-2);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 960px) {
+  .VPHome .VPHero .text {
+    font-size: 40px;
+    line-height: 1.2;
+  }
+}
+
+.VPHome .VPFeature code {
+  font-size: 0.85em;
+}
+
+.VPHome .VPFeature {
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg);
+  border-radius: 8px;
+}
+
+.VPHome .VPFeature .icon {
+  display: none;
+}

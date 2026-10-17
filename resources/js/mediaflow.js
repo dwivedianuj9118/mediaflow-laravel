@@ -3071,12 +3071,11 @@
 ],
 
 // PHP Facade On-Demand Execution
-$result = MediaFlow::optimize(
-    $media,
-    format: '${currentFormat}',
-    quality: ${currentQuality},
-    replaceOriginal: false
-);
+$result = MediaFlow::optimize($media, [
+    'format' => '${currentFormat}',
+    'quality' => ${currentQuality},
+    'action' => 'copy', // or 'replace'
+]);
 // Metrics: ${compSize >= 1024 ? (compSize / 1024).toFixed(2) + ' MB' : compSize + ' KB'} (-${savedPct}% reduction)`;
                 }
             };

@@ -6,8 +6,13 @@
 .idea/
 .env
 
-# Ignore internal notes and drafts in docs, publish only static HTML site
-/docs/*.md
+# Docs site (VitePress): build output and dependencies
+/docs/node_modules/
+/docs/.vitepress/dist/
+/docs/.vitepress/cache/
+/docs/.vitepress/.temp/
+
+# Internal notes and drafts in docs
 /docs/*.docx
 /docs/*.txt
 /docs/MEDIAFLOW_AI_IDE_*

@@ -203,14 +203,17 @@
             <!-- Hero Header -->
             <div class="mf-docs-hero">
                 <div class="mf-docs-badge-row">
-                    <span class="mf-docs-badge">✓ PHP 8.2 & 8.3 Ready</span>
+                    <span class="mf-docs-badge">✓ PHP 8.2+ Ready</span>
                     <span class="mf-docs-badge">✓ Laravel 11.x, 12.x & 13.x</span>
                     <span class="mf-docs-badge">✓ Zero External JS/CSS CDNs</span>
-                    <span class="mf-docs-badge">✓ 80 Automated Tests Passing</span>
                 </div>
                 <h1 class="mf-docs-title">MediaFlow for Laravel Documentation</h1>
                 <p class="mf-docs-lead">
                     Universal media management infrastructure, provider-agnostic storage adapters, modern Blade shortcut input components, on-demand format conversion & compression, and hardware-accelerated 3D upload lifecycle visualization.
+                </p>
+                <p class="mf-docs-lead" style="font-size: 0.9375rem;">
+                    The full, searchable documentation with one page per topic is online at
+                    <a href="https://dwivedianuj9118.github.io/mediaflow-laravel/" target="_blank" rel="noopener">dwivedianuj9118.github.io/mediaflow-laravel</a>.
                 </p>
             </div>
 
@@ -234,7 +237,7 @@
                         <a href="{{ asset('vendor/mediaflow/img/mediaflow_architecture.svg') }}" target="_blank" style="font-size: 0.75rem; color: var(--mf-text-muted); text-decoration: none; font-weight: 500;">Open full size ↗</a>
                     </div>
                     <div style="border-radius: var(--mf-radius-md); overflow: hidden; background: #ffffff; padding: 1rem; border: 1px solid rgba(0,0,0,0.06);">
-                        <img src="{{ asset('vendor/mediaflow/img/mediaflow_architecture.svg') }}" alt="MediaFlow Architecture Diagram" style="width: 100%; height: auto; max-width: 100%; display: block; border-radius: 6px;" onerror="this.onerror=null; this.src='https://dwivedianuj9118.github.io/mediaflow-laravel/mediaflow_architecture.svg';">
+                        <img src="{{ asset('vendor/mediaflow/img/mediaflow_architecture.svg') }}" alt="MediaFlow Architecture Diagram" style="width: 100%; height: auto; max-width: 100%; display: block; border-radius: 6px;" onerror="this.onerror=null; this.src='https://dwivedianuj9118.github.io/mediaflow-laravel/images/mediaflow_architecture.svg';">
                     </div>
                     <div style="font-size: 0.75rem; color: var(--mf-text-muted); margin-top: 0.65rem; text-align: right;">
                         Clean boundary: Physical Storage Adapters ⇄ Catalog State ⇄ Edge Delivery & Signed Streaming
@@ -313,10 +316,10 @@
                         </div>
                         <div class="mf-feature-card" style="padding: 1.25rem;">
                             <div style="font-weight: 700; color: #f59e0b; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.4rem;">
-                                <span>🛡️</span> Relation Integrity Delete Guards
+                                <span>🛡️</span> Safe Deletes &amp; Soft-Deleted Records
                             </div>
                             <div style="font-size: 0.85rem; color: var(--mf-text-muted); line-height: 1.55;">
-                                Prevents deleting media files that are still referenced by foreign keys in your host application tables with an informative toast warning.
+                                Media rows use soft deletes and fire a <code>MediaDeleted</code> event, so you can clear references in your own tables. Relations to deleted media resolve to <code>null</code>.
                             </div>
                         </div>
                         <div class="mf-feature-card" style="padding: 1.25rem;">
@@ -404,7 +407,7 @@ php artisan storage:link</code></pre>
                                 <span>🎨</span> Theme &amp; Appearance
                             </div>
                             <div style="font-size: 0.85rem; color: var(--mf-text-muted); line-height: 1.55;">
-                                Select brand accent colors (Indigo, Emerald, Violet, Amber, Rose, Cyan) or enter a custom hex code with automatic Light/Dark mode sync.
+                                Select brand accent colors (Indigo, Emerald, Violet, Sky, Amber, Rose, Slate) or enter a custom hex code with automatic Light/Dark mode sync.
                             </div>
                         </div>
                     </div>
@@ -807,7 +810,7 @@ MEDIAFLOW_GUARD=admin</code></pre>
                             </tr>
                             <tr>
                                 <td><strong>PHP Extensions</strong></td>
-                                <td><code>fileinfo</code>, <code>gd</code> or <code>imagick</code>, <code>exif</code></td>
+                                <td><code>fileinfo</code>, <code>gd</code> (with WebP), <code>exif</code></td>
                                 <td>MIME sniffing, EXIF stripping, WebP thumbnails & compression</td>
                             </tr>
                         </tbody>
@@ -1367,12 +1370,15 @@ MEDIAFLOW_DEV_NAV=false</code></pre>
                         <span class="mf-code-lang">JavaScript</span>
                         <button type="button" class="mf-code-copy-btn"><span>📋 Copy</span></button>
                     </div>
-                    <pre class="mf-code-pre"><code>document.<span class="tok-fn">addEventListener</span>(<span class="tok-str">'mediaflow:selected'</span>, (<span class="tok-var">e</span>) =&gt; {
-    <span class="tok-kw">const</span> media = <span class="tok-var">e</span>.detail;
-    console.<span class="tok-fn">log</span>(<span class="tok-str">'Selected media ID:'</span>, media.id);
-    console.<span class="tok-fn">log</span>(<span class="tok-str">'Full Delivery URL:'</span>, media.url);
-    console.<span class="tok-fn">log</span>(<span class="tok-str">'Thumb WebP URL:'</span>, media.thumbnail);
-});</code></pre>
+                    <pre class="mf-code-pre"><code><span class="tok-com">// Manager in picker mode: &lt;x-mediaflow::manager mode="picker" /&gt;</span>
+document.<span class="tok-fn">addEventListener</span>(<span class="tok-str">'mediaflow:picked'</span>, (<span class="tok-var">e</span>) =&gt; {
+    <span class="tok-kw">const</span> { item, items } = <span class="tok-var">e</span>.detail;
+    console.<span class="tok-fn">log</span>(<span class="tok-str">'Selected media ID:'</span>, item.id);
+    console.<span class="tok-fn">log</span>(<span class="tok-str">'Full Delivery URL:'</span>, item.url);
+});
+
+<span class="tok-com">// Input field: fired after an upload or a pick</span>
+document.<span class="tok-fn">addEventListener</span>(<span class="tok-str">'mediaflow:change'</span>, (<span class="tok-var">e</span>) =&gt; console.<span class="tok-fn">log</span>(<span class="tok-var">e</span>.detail.media.id));</code></pre>
                 </div>
             </section>
 
@@ -1584,7 +1590,7 @@ MediaFlow::<span class="tok-fn">delete</span>(<span class="tok-var">$media</span
             <section id="settings-compression" class="mf-docs-section">
                 <h2 class="mf-docs-h2"><span>⚙️</span> 13. Settings, Image Compression & Dynamic Theming</h2>
                 <p class="mf-docs-p">
-                    MediaFlow features an enterprise-grade <strong>Runtime Settings Engine</strong> (<code>MediaFlowSettingsManager</code>) that decouples configuration from code deployments. Through the built-in Settings Dashboard (<code>/mediaflow/settings</code>) or REST API, administrators can adjust image compression parameters, configure default formats (WebP, AVIF, JPEG), set max dimensions, toggle EXIF stripping, adjust cloud credentials, and switch theme accents live with instant database persistence.
+                    MediaFlow features an enterprise-grade <strong>Runtime Settings Engine</strong> (<code>MediaFlowSettingsManager</code>) that decouples configuration from code deployments. Through the built-in Settings Dashboard (<code>/mediaflow/settings</code>) or REST API, administrators can adjust image compression parameters, configure default formats (WebP, JPEG, PNG or keep original), set max dimensions, toggle EXIF stripping, adjust cloud credentials, and switch theme accents live with instant database persistence.
                 </p>
 
                 <div class="mf-feature-card" style="margin-bottom: 2rem;">
@@ -1621,12 +1627,6 @@ MediaFlow::<span class="tok-fn">delete</span>(<span class="tok-var">$media</span
                                 <td><code>82%</code> (30 - 98%)</td>
                                 <td><strong>85% - 94%</strong></td>
                                 <td>Universal browser support, transparent alpha channel, ultra-small file sizes. Best for web apps.</td>
-                            </tr>
-                            <tr>
-                                <td><span style="color: var(--mf-primary); font-weight: 700;">AVIF</span> (Next-Gen)</td>
-                                <td><code>75%</code> (30 - 90%)</td>
-                                <td><strong>90% - 96%</strong></td>
-                                <td>State-of-the-art compression algorithm based on AV1 video codec. Unbeatable fidelity-to-byte ratio.</td>
                             </tr>
                             <tr>
                                 <td><span style="color: var(--mf-warning); font-weight: 700;">JPEG</span></td>
@@ -1690,7 +1690,6 @@ MediaFlow::<span class="tok-fn">delete</span>(<span class="tok-var">$media</span
                                 </label>
                                 <div class="mf-sim-pills" id="mf-sim-format-pills">
                                     <button type="button" class="mf-sim-pill active" data-format="webp">WebP (Recommended)</button>
-                                    <button type="button" class="mf-sim-pill" data-format="avif">AVIF (Next-Gen)</button>
                                     <button type="button" class="mf-sim-pill" data-format="jpeg">JPEG</button>
                                     <button type="button" class="mf-sim-pill" data-format="png">PNG</button>
                                 </div>
@@ -1817,12 +1816,11 @@ MediaFlow::<span class="tok-fn">delete</span>(<span class="tok-var">$media</span
 ],
 
 // PHP Facade On-Demand Execution
-$result = MediaFlow::optimize(
-    $media,
-    format: 'webp',
-    quality: 82,
-    replaceOriginal: false
-);
+$result = MediaFlow::optimize($media, [
+    'format' => 'webp',
+    'quality' => 82,
+    'action' => 'copy', // or 'replace'
+]);
 // Metrics: 226 KB (-93.4% reduction)</code></pre>
                                 </div>
                             </div>
@@ -2229,7 +2227,7 @@ MEDIAFLOW_CDN_URL=https://media-cdn.yourdomain.com</code></pre>
                         <a href="{{ asset('vendor/mediaflow/img/mediaflow_upload_lifecycle.svg') }}" target="_blank" style="font-size: 0.75rem; color: var(--mf-text-muted); text-decoration: none; font-weight: 500;">Open full size ↗</a>
                     </div>
                     <div style="border-radius: var(--mf-radius-md); overflow: hidden; background: #ffffff; padding: 1rem; border: 1px solid rgba(0,0,0,0.06);">
-                        <img src="{{ asset('vendor/mediaflow/img/mediaflow_upload_lifecycle.svg') }}" alt="MediaFlow 5-Stage Upload Lifecycle" style="width: 100%; height: auto; max-width: 100%; display: block; border-radius: 6px;" onerror="this.onerror=null; this.src='https://dwivedianuj9118.github.io/mediaflow-laravel/mediaflow_upload_lifecycle.svg';">
+                        <img src="{{ asset('vendor/mediaflow/img/mediaflow_upload_lifecycle.svg') }}" alt="MediaFlow 5-Stage Upload Lifecycle" style="width: 100%; height: auto; max-width: 100%; display: block; border-radius: 6px;" onerror="this.onerror=null; this.src='https://dwivedianuj9118.github.io/mediaflow-laravel/images/mediaflow_upload_lifecycle.svg';">
                     </div>
                     <div style="font-size: 0.75rem; color: var(--mf-text-muted); margin-top: 0.65rem; text-align: right;">
                         Quarantine staging ➔ Validation ➔ GD/Imagick WebP variants ➔ Storage commit ➔ Delivery URL

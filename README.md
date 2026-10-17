@@ -9,10 +9,10 @@
 
 Universal media management infrastructure, provider-agnostic storage adapters, CDN delivery resolution, modern Blade shortcut input components, on-demand format conversion & compression, and hardware-accelerated 3D upload lifecycle visualization for Laravel applications.
 
-> 📖 **Live Documentation Portal**: [https://dwivedianuj9118.github.io/mediaflow-laravel/](https://dwivedianuj9118.github.io/mediaflow-laravel/) (or locally at `/mediaflow/docs`) for the complete interactive developer guide with 1-click code copying, live component demos, and API reference.
+> 📖 **Live Documentation Portal**: [https://dwivedianuj9118.github.io/mediaflow-laravel/](https://dwivedianuj9118.github.io/mediaflow-laravel/) (or locally at `/mediaflow/docs`) for the complete developer guide: installation, components, configuration, API reference and security, one page per topic.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/dwivedianuj9118/mediaflow-laravel/master/docs/mediaflow_architecture.svg" alt="MediaFlow System Reference Architecture" width="100%">
+  <img src="https://raw.githubusercontent.com/dwivedianuj9118/mediaflow-laravel/main/docs/public/images/mediaflow_architecture.svg" alt="MediaFlow System Reference Architecture" width="100%">
 </p>
 
 ---
